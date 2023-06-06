@@ -1,31 +1,44 @@
 import turtle
 
-window = turtle.Screen()
-window.bgcolor("pink")
-window.title("Feliz")
-
 pen = turtle.Turtle()
-pen.color ("red")
-pen.fillcolor("red")
-pen.pensize(3)
-pen.speed(7)
-pen.begin_fill()
-pen.left(140)
-pen.forward(224)
-for _ in range(200):
-    pen.right(1)
-    pen.forward(2)
+
+
+def curve():
+    for i in range(200):
+        pen.right(1)
+        pen.forward(1)
+
+
+def heart():
+    pen.fillcolor("red")
+
+    pen.begin_fill()
+
+    pen.left(140)
+    pen.forward(113)
+
+    curve()
     pen.left(120)
-for _ in range(200):
-    pen.right(1)
-    pen.forward(224)
+
+    curve()
+
+    pen.forward(112)
+
     pen.end_fill()
+
+
+def txt():
     pen.up()
-    pen.goto(0, -70)
+
+    pen.setpos(-98, 95)
+
     pen.down()
-    pen.color("black")
-    pen.write("Para voce ")
 
-    pen.hideturtle()
+    pen.color("lightgreen")
 
-    turtle.done()
+    pen.write("Feliz dia ", font=("Verdana", 12, "bold"))
+
+
+heart()
+txt()
+pen.ht()
